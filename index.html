@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather & Music</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+  <div class="container">
+    <h1>오늘의 날씨 🎵</h1>
+
+    <!-- 검색 폼 -->
+    <form id="searchForm" class="hidden">
+      <input type="text" id="cityInput" placeholder="도시 이름 입력(한글/영어)" autocomplete="off" required>
+      <button type="submit">조회</button>
+    </form>
+
+    <!-- 최근 검색 -->
+    <div id="historyBox" class="hidden">
+      <h3>최근 검색</h3>
+      <div id="historyList"></div>
+    </div>
+
+    <!-- 날씨 정보 -->
+    <div id="weatherBox" class="hidden">
+      <h2 id="cityName"></h2>
+      <p id="description"></p>
+      <p id="temp"></p>
+      <img id="icon" alt="weather icon">
+    </div>
+
+    <!-- 플레이리스트 -->
+    <section id="musicSection" class="hidden">
+      <h2>오늘의 플레이리스트 🎧</h2>
+      <iframe id="playlist"
+              width="100%" height="380" frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              loading="lazy"></iframe>
+    </section>
+
+    <p id="footnote">위치 권한을 허용하거나 도시를 검색해 보세요.</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

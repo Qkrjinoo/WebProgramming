@@ -1,0 +1,27 @@
+*{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;margin:0;padding:0}
+body{transition:background 0.6s ease;color:#fff;min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:1rem}
+body.loading{background:#111}
+.container{max-width:460px;width:100%}
+input{padding:0.5rem;font-size:1rem;border:none;border-radius:4px;margin-right:0.5rem;width:60%}
+button{padding:0.55rem 1rem;font-size:1rem;border:none;border-radius:4px;background:#0066cc;color:#fff;cursor:pointer}
+button:hover{opacity:0.9}
+#icon{width:100px;height:100px}
+.hidden{display:none}
+
+#historyBox{margin:1rem 0}
+#historyBox button{
+  margin:0.15rem; padding:0.35rem 0.8rem;
+  border:none; border-radius:4px; background:#eeeeeeaa; color:#222; cursor:pointer; font-size:0.9rem
+}
+#historyBox button:hover{background:#ddd}
+
+.error{background:#ff5555dd;padding:1rem;border-radius:6px;margin:1rem 0}
+
+/* 배경 테마 */
+.clear-bg{background:url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1350&q=80') center/cover}
+.clouds-bg{background:url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1350&q=80') center/cover}
+.rain-bg{background:url('https://images.unsplash.com/photo-1526676031859-d56d3a71fec6?auto=format&fit=crop&w=1350&q=80') center/cover}
+.snow-bg{background:url('https://images.unsplash.com/photo-1517832606294-3c2b69f7ae6c?auto=format&fit=crop&w=1350&q=80') center/cover}
+.thunder-bg{background:url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1350&q=80') center/cover}
+.mist-bg{background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1350&q=80') center/cover}
+.default-bg{background:#444}
