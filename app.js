@@ -1,7 +1,7 @@
-// === API 키 ===
+// API_키
 const OPENWEATHER_API_KEY = "ab5650daefb30bed00787559dd50297b";
 
-// === 날씨 → 테마/플레이리스트 매핑 ===
+// 날씨, 플리 매칭
 const weatherMap = {
   Thunderstorm: { bg: "thunder-bg", pl: "37i9dQZF1DX0KpeLFwA3f0" },
   Drizzle: { bg: "rain-bg", pl: "37i9dQZF1DXbvABJXBIyiY" },
@@ -18,13 +18,12 @@ const weatherMap = {
   Tornado: { bg: "thunder-bg", pl: "37i9dQZF1DX0KpeLFwA3f0" },
 };
 
-// === 도우미 ===
 function $(id) {
   return document.getElementById(id);
 }
 const MAX_HISTORY = 5;
 
-// === 검색 히스토리 ===
+// 검색 히스토리
 function getHistory() {
   return JSON.parse(localStorage.getItem("searchHistory") || "[]");
 }
@@ -65,7 +64,7 @@ function showError(msg) {
   setTimeout(() => (box.style.display = "none"), 4000);
 }
 
-// === API ===
+// API
 async function fetchJson(url) {
   const r = await fetch(url);
   if (!r.ok) throw new Error("데이터를 가져올 수 없습니다");
@@ -88,7 +87,7 @@ async function fetchWeatherByCity(city) {
   return fetchWeatherByCoords(lat, lon);
 }
 
-// === UI ===
+// UI
 function updateUI(data) {
   $("cityName").innerText = `${data.name}, ${data.sys.country}`;
   $("description").innerText = data.weather[0].description;
@@ -117,7 +116,7 @@ function updateUI(data) {
   $("footnote").innerText = "Powered by OpenWeather & Spotify";
 }
 
-// === 핵심 기능 ===
+// 핵심 기능
 async function queryCity(city) {
   if (!city) return;
   try {
@@ -154,14 +153,12 @@ function initGeo() {
   );
 }
 
-// === 이벤트 ===
 $("searchForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const city = $("cityInput").value.trim();
   queryCity(city);
 });
 
-// === 시작 ===
 document.addEventListener("DOMContentLoaded", () => {
   initGeo();
   renderHistory();
